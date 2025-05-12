@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { GoalList } from "./components/GoalList.tsx";
-import { Header } from "./components/Header.tsx";
-import { NewGoal } from "./components/NewGoal.tsx";
+import { GoalList, Header, NewGoal } from "./components";
 import goalsImg from "./assets/goals.jpg";
 
 export type GoalItem = {
@@ -16,7 +14,7 @@ function App() {
   const handleAddGoal = (goal: string, summary: string) => {
     setGoals((prevGoals) => {
       const newGoal: GoalItem = {
-        id: Math.random(),
+        id: Date.now(),
         title: goal,
         description: summary,
       };
@@ -35,7 +33,6 @@ function App() {
         <h1>Your Goals</h1>
       </Header>
 
-      {/* <button onClick={handleAddGoal}>Add Goal</button> */}
       <NewGoal onAddGoal={handleAddGoal} />
 
       <GoalList goals={goals} onDeleteGoal={handleDeleteGoal} />

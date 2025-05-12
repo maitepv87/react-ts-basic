@@ -11,8 +11,10 @@ export const NewGoal = ({ onAddGoal }: NewGoalProp) => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
 
-    const enteredGoal = goal.current!.value;
-    const enteredSummary = summary.current!.value;
+    const enteredGoal = goal.current?.value.trim() || "";
+    const enteredSummary = summary.current?.value.trim() || "";
+
+    if (!enteredGoal || !enteredSummary) return;
 
     event.currentTarget.reset();
     onAddGoal(enteredGoal, enteredSummary);

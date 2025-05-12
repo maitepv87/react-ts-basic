@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
-import { GoalItem } from "./GoalItem.tsx";
-import { GoalItem as CGol } from "../App.tsx";
+import { GoalItem } from "./";
+import { GoalItem as GoalType } from "../App.tsx";
 import { InfoBox } from "./InfoBox.tsx";
 
 // type GoalListPros = {
@@ -8,7 +8,7 @@ import { InfoBox } from "./InfoBox.tsx";
 // };   ===> o'
 
 type GoalListPros = {
-  goals: CGol[];
+  goals: GoalType[]; // o goals: GoalItem[]
   onDeleteGoal: (id: number) => void;
 };
 
