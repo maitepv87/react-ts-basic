@@ -7,10 +7,10 @@ import { InfoBox } from "./InfoBox.tsx";
 //   goals: { title: string; description: string; id: number }[];
 // };   ===> o'
 
-type GoalListPros = {
+interface GoalListPros {
   goals: GoalType[]; // o goals: GoalItem[]
   onDeleteGoal: (id: number) => void;
-};
+}
 
 export const GoalList = ({ goals, onDeleteGoal }: GoalListPros) => {
   if (goals.length === 0) {

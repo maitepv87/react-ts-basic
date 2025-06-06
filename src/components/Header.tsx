@@ -1,12 +1,11 @@
 import { type ReactNode } from "react";
-
-type HeaderProps = {
+interface HeaderProps {
   image: {
     src: string;
     alt: string;
   };
   children: ReactNode;
-};
+}
 
 export const Header = ({ image, children }: HeaderProps) => {
   return (

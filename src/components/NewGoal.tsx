@@ -1,8 +1,8 @@
 import { useRef, type FormEvent } from "react";
 
-type NewGoalProp = {
+interface NewGoalProp {
   onAddGoal: (goal: string, summary: string) => void;
-};
+}
 
 export const NewGoal = ({ onAddGoal }: NewGoalProp) => {
   const goal = useRef<HTMLInputElement>(null);
